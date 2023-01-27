@@ -1,12 +1,19 @@
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.fail;
 
 public class FixtureDemo {
-    @Before
+    @BeforeClass
+    public static void beforeEverything() {
+        System.out.println("Before Class Annotation");
+    }
+
+    @AfterClass
+    public static void afterEverything() {
+        System.out.println("After Class Annotation");
+    }
+
+    @Before  // before every function
     public void setUp() {
         System.out.println("FixtureDemo.setUp");
     }
